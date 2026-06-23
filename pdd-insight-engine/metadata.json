@@ -1,0 +1,6 @@
+{
+  "name": "PDD Insight Engine",
+  "description": "Analisador inteligente de Process Design Documents (PDD) para equipes de T2A. Transforma documentos em visões estruturadas para QA, Devs e Arquitetos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

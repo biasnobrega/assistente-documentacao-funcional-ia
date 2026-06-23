@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "Analise": {
+      "title": "Análise de PDD",
+      "description": "Registro completo de uma análise de PDD realizada pelo agente.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "perfil": { "type": "string" },
+        "dataHora": { "type": "string", "format": "date-time" },
+        "title": { "type": "string" },
+        "resumoProcesso": { "type": "string" },
+        "etapasPrincipais": { "type": "array", "items": { "type": "string" } },
+        "regrasExcecoes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "descricao": { "type": "string" },
+              "contexto": { "type": "string" }
+            }
+          }
+        },
+        "pontosAtencao": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risco": { "type": "string" },
+              "causa": { "type": "string" },
+              "impacto": { "type": "string" }
+            }
+          }
+        },
+        "escopo": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "categoria": { "type": "string" },
+              "descricao": { "type": "string" }
+            }
+          }
+        },
+        "gaps": { "type": "array", "items": { "type": "string" } },
+        "validacaoQA": {
+          "type": "object",
+          "properties": {
+            "sugestoesValidacao": { "type": "array", "items": { "type": "string" } },
+            "complementosPDD": { "type": "array", "items": { "type": "string" } },
+            "atuacaoQA": { "type": "array", "items": { "type": "string" } },
+            "perguntasT2A": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "persistenceBlock": {
+          "type": "object",
+          "properties": {
+            "usuario": { "type": "string" },
+            "perfil": { "type": "string" },
+            "data": { "type": "string" },
+            "processo": { "type": "string" },
+            "resumo": { "type": "string" },
+            "regrasCriticas": { "type": "string" },
+            "pontosAtencao": { "type": "string" },
+            "gaps": { "type": "string" }
+          }
+        }
+      },
+      "required": ["userId", "userEmail", "perfil", "dataHora", "title"]
+    }
+  },
+  "firestore": {
+    "/analises/{analiseId}": {
+      "schema": "Analise",
+      "description": "Históricos completos de análises."
+    }
+  }
+}

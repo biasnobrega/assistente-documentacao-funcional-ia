@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    match /analises/{analiseId} {
+      function isValidAnalise(data) {
+        return data.userId == request.auth.uid
+          && data.userEmail is string && data.userEmail.size() <= 200
+          && data.perfil in ['QA', 'DEV', 'ARQUITETO', 'QA'] // Added QA profile explicitly
+          && data.dataHora is timestamp
+          && data.title is string && data.title.size() <= 2000
+          && data.resumoProcesso is string && data.resumoProcesso.size() <= 20000;
+      }
+
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.userId == request.auth.uid;
+      
+      allow create: if isSignedIn() 
+        && isValidAnalise(request.resource.data)
+        && request.resource.data.dataHora == request.time;
+        
+      allow update: if false; 
+      allow delete: if isOwner(resource.data.userId);
+    }
+  }
+}
