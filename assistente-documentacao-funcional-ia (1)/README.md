@@ -1,33 +1,32 @@
-# Assistente de Documentação Funcional IA
+#  Assistente de Documentação Funcional com IA
 
-## Visão Geral
+Este projeto apresenta um **Assistente de Análise Estática de Processos** desenvolvido nativamente no **Google AI Studio**. A solução foi projetada para atuar como um engenheiro de software e analista de processos sênior no contexto de Transição para Automação (T2A), transformando documentos operacionais longos (PDDs) em diagnósticos técnicos estruturados de alto nível.
 
-O Assistente de Documentação Funcional IA é um agente baseado em inteligência artificial projetado para analisar documentos funcionais (PDDs, especificações técnicas e descrições de processos) e transformá-los em uma visão estruturada, objetiva e orientada para áreas técnicas como QA, desenvolvimento e arquitetura.
+O principal objetivo da ferramenta é mitigar o tempo gasto por times de desenvolvimento, arquitetura e QA na leitura passiva de documentações, preparando-os diretamente para discussões técnicas focadas em soluções.
 
-O objetivo principal é reduzir o tempo necessário para entendimento de documentos extensos, evitando que reuniões técnicas sejam usadas para leitura de documentação.
+---
 
-## Funcionalidade
+##  Escopo e Funcionalidades
 
-Entrada: PDF, DOCX, TXT (texto extraído)
+* **Análise Multiformato Single-Turn:** Ingestão direta de arquivos `.pdf`, `.docx` ou `.txt` sem a necessidade de fragmentação de dados (No-Chunking), aproveitando a janela de contexto expandida da IA.
+* **Mapeamento Macro de Processos:** Extração de visões gerais e fluxos em nível macro sem redundâncias operacionais ou passo a passo de cliques.
+* **Detecção de Gaps e Inconsistências:** Varredura ativa no texto para identificar contradições, fluxos omitidos e regras de negócios ambíguas.
+* **Diagnóstico de Riscos e Impactos:** Identificação de causas raízes técnicas (como condições de corrida, latências de rede ou dependências de interface visual) e seus respectivos impactos para a automação.
+* **Modelagem de Persistência:** Estruturação automatizada de payloads e tabelas relacionais para armazenamento do histórico de análises e auditoria por usuário.
 
-Saída:
-- Resumo do processo
-- Etapas principais (macro)
-- Regras críticas e exceções
-- Pontos de atenção
-- Escopo
-- Possíveis gaps
-- Riscos técnicos
+---
 
-## Arquitetura
+##  Estrutura do Repositório
 
-Baseado em engenharia de prompts no AI Studio, sem APIs externas.
+O projeto está organizado da seguinte forma para facilitar a avaliação técnica:
 
-Fluxo:
-Entrada -> Prompt de análise -> Saída estruturada
+* **[`docs/arquitetura.md`](docs/arquitetura.md):** Detalhamento do fluxo de dados da esteira de processamento e técnicas de Engenharia de Prompts utilizadas.
+* **[`docs/conceitos.md`](docs/conceitos.md):** Embasamento teórico sobre Janela de Contexto Expandida, Engenharia de Prompts e Engenharia de Requisitos aplicada à automação.
+* **[`docs/desafios_e_solucoes.md`](docs/desafios_e_solucoes.md):** Mapeamento de desafios comportamentais dos modelos de linguagem (como redundância e alucinações) e como foram mitigados via instruções de restrição.
+* **[`prompts/`](prompts/):** Contém os prompts de sistema reais utilizados para a estruturação de saídas, análise crítica e persistência em banco de dados.
 
-## Conceitos
-- Prompt Engineering
-- NLP
-- Análise de requisitos
-- Estruturação de documentos
+---
+
+##  Tecnologias e Ferramentas Utilizadas
+* **Google AI Studio:** Ambiente de desenvolvimento e refinamento de prompts avançados.
+* **Markdown:** Padronização estrutural dos relatórios técnicos gerados.
