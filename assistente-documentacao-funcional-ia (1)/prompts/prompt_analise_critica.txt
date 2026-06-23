@@ -1,0 +1,7 @@
+Identifique:
+- contradições
+- dependências faltantes
+- riscos
+- inconsistências
+
+Reporte em "Possíveis Gaps"

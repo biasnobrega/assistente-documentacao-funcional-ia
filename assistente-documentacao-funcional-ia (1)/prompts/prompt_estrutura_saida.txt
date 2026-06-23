@@ -1,0 +1,7 @@
+Gere saída estruturada com:
+
+1. Resumo
+2. Etapas macro
+3. Regras críticas
+4. Pontos de atenção
+5. Gaps
