@@ -1,7 +1,14 @@
-Gere saída estruturada com:
+# Exemplo de Estrutura de Saída Padronizada do Agente
 
-1. Resumo
-2. Etapas macro
-3. Regras críticas
-4. Pontos de atenção
-5. Gaps
+[MÓDULO DE DIAGNÓSTICO TÉCNICO]
+
+Ponto Crítico #[Número]
+- Risco: [Descrição detalhada do risco técnico, mapeando instabilidades, condições de corrida ou dependências de interface encontradas no documento]
+- Causa Raiz: [Explicação técnica de onde o processo se torna ambíguo, omisso ou dependente de dados externos não tratados no PDD]
+- Impacto na Automação: [Consequência direta para o desenvolvimento, barreira de testes ou necessidade de intervenção humana caso o fluxo seja construído sem o devido tratamento]
+
+---
+
+[MÓDULO DE PERSISTÊNCIA REQUERIDO]
+- Tabelas sugeridas para histórico de auditoria
+- Tipos de dados e índices recomendados para indexação por Usuário, Data e ID de Processo.
