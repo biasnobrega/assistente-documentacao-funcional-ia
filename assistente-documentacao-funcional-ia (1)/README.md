@@ -28,5 +28,8 @@ O projeto está organizado da seguinte forma para facilitar a avaliação técni
 ---
 
 ##  Tecnologias e Ferramentas Utilizadas
-* **Google AI Studio:** Ambiente de desenvolvimento e refinamento de prompts avançados.
+
+* **Google AI Studio / IDX Workspace:** Ambiente de desenvolvimento do prompt e geração da estrutura do aplicativo (Firebase Applet).
+* **React & TypeScript:** Base do desenvolvimento do front-end da aplicação (`src/App.tsx`).
+* **Vite:** Build tool utilizada para garantir a performance e inicialização rápida do ambiente de desenvolvimento.
 * **Markdown:** Padronização estrutural dos relatórios técnicos gerados.
