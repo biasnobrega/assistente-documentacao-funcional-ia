@@ -1,7 +1,29 @@
-Identifique:
-- contradições
-- dependências faltantes
-- riscos
-- inconsistências
+Projete uma estrutura de banco de dados para armazenar o histórico de uso de um agente de análise de PDD.
 
-Reporte em "Possíveis Gaps"
+Requisitos:
+- Cada registro deve estar vinculado a um usuário autenticado (login Google)
+- Deve ser possível recuperar facilmente o histórico por usuário
+
+Armazenar:
+- usuario (id ou email)
+- perfil (QA ou DEV/ARQUITETO)
+- data da análise
+- identificacao do processo
+- resumo do processo
+- regras criticas
+- pontos de atencao
+- gaps identificados
+
+Permitir consultas por:
+- usuario
+- data
+- processo
+
+O que quero na resposta:
+- Estrutura das tabelas (nome e campos)
+- Tipos de dados sugeridos
+- Relacionamentos (se houver mais de uma tabela)
+- Sugestao de chave primaria e indices
+- Exemplo de um registro salvo
+
+Nao alterar o comportamento do agente. Apenas estruturar o banco de dados para persistencia das analises.
